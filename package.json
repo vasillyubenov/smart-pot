@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "espruino": "^0.0.17",
+    "sqlite3": "^5.1.4",
+    "uglify-js": "^3.17.4"
+  }
+}
