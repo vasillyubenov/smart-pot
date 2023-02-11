@@ -1,22 +1,24 @@
-function startDHT11Sensor() {
-    digitalWrite(23, true);
-    pinMode(22,'output');
-    digitalWrite(22, true);
-    var i = 0;
-    
-    var dht = require("DHT11").connect(22);
-    var updateSensor = setInterval(doReading, 1000);
-    
-    function doReading() {
-      if (i >= 100) {
-        clearInterval(updateSensor);
+function startDHT11Sensor(onPing) {
+    if (onPing == null) {
         return;
-      }
-      
-      dht.read((a) => {
-        console.log("Temp is " + a.temp.toString() + " and RH is " + a.rh.toString());
-      });
-      i++;
     }
-    
+
+    let sensorData = new DHT11SensorAnalogData(0, 0, 0);
+
+    var dht = require("DHT11").connect(HUMIDITY_SENSOR_GPIO);
+    setInterval(doReading, SENSOR_PING_TIME);
+
+    function doReading() {
+        /*
+        * This passes dht11 sensor data to onPing method which is supposed 
+        * to update current plant state and display data in human readable format
+        */
+        dht.read(data => {
+            sensorData.setHumidityPercent(data.rh);
+            sensorData.setTemperature(data.temp);
+            sensorData.setRawData(data.raw);
+        });
+
+        onPing(sensorData);
+    }
 }

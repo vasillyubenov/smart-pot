@@ -1,0 +1,23 @@
+var WIFI_NAME = "Bazata";
+
+var WIFI_OPTIONS = {
+  password: "Kidd1245"
+};
+
+var SENSOR_PING_TIME = 5000;
+
+var SERVER_PORT = 80;
+
+var HUMIDITY_SENSOR_GPIO = 22;
+
+var SOIL_MOISTURE_SENSOR_GPIO = 21;
+
+var MIN_HUMIDITY_PERCENT = 0;
+
+var MIN_DHT11_TEMP = 0;
+
+var MAX_DHT11_TEMP = 50;
+
+var MIN_SOIL_SENSOR_PERCENT = 0;
+
+var MAX_SOIL_SENSOR_PERCENT = 100;
