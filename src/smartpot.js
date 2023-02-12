@@ -1,1 +1,1 @@
-startConnection();
+E.on('init', startConnection);
