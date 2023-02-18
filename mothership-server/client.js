@@ -1,11 +1,10 @@
 const WebSocket = require("ws");
-const prompt = require("prompt-sync")({ sigint: true });
+// const prompt = require("prompt-sync")({ sigint: true });
+const sleep = require("sleep");
 
 const SENSOR_PING_TIME = 5000;
 const SOIL_MOISTURE_SENSOR_GPIO = 35;
-const HUMIDITY_SENSOR_GPIO = 14;//prev 22
-
-
+const HUMIDITY_SENSOR_GPIO = 14; //prev 22
 
 async function main() {
   const ws = new WebSocket("ws://192.168.1.2:80");
@@ -29,7 +28,7 @@ async function main() {
     ws.send(`login:alex:123`);
   };
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  sleep.sleep(3);
 
   startSoilMoistureSensor((mois) => {
     ws.send(`m:${mois}`);
