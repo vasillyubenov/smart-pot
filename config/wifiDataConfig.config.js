@@ -15,3 +15,7 @@ var MAX_DHT11_TEMP = 50;
 var MIN_SOIL_SENSOR_PERCENT = 0;
 
 var MAX_SOIL_SENSOR_PERCENT = 100;
+
+var WIFI_NAME = "QtoKotki";
+
+var WIFI_OPTIONS = { password: "soletisusshokolad69" };

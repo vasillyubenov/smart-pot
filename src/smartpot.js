@@ -1,1 +1,7 @@
-E.on('init', startConnection);
+function onInit() {
+    console.log("Initializing...");
+    startConnection();
+}
+
+// save();
+onInit();
