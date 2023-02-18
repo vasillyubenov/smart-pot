@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "espruino": "^0.0.17",
+    "prompt-sync": "^4.2.0",
     "sqlite3": "^5.1.4",
     "uglify-js": "^3.17.4",
-    "ws": "^8.12.0"
+    "util": "^0.12.5",
+    "ws": "^8.12.1"
   }
 }
