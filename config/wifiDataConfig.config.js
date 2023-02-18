@@ -1,14 +1,8 @@
-var WIFI_NAME = "Bazata";
-
-var WIFI_OPTIONS = {
-  password: "Kidd1245"
-};
-
 var SENSOR_PING_TIME = 5000;
 
 var SERVER_PORT = 80;
 
-var HUMIDITY_SENSOR_GPIO = 22;
+var HUMIDITY_SENSOR_GPIO = 14;//prev 22
 
 var SOIL_MOISTURE_SENSOR_GPIO = 35;
 
